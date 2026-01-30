@@ -12,12 +12,15 @@ struct ContentView: View {
     var body: some View {
         ScrollView{
             VStack(spacing: 20) {
+                
                 //Image
-                Image(systemName: "person.circle.fill")
+                Image(.mig)
                     .resizable()
-                    .scaledToFit()
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: 120, height: 120)
-                    .foregroundStyle(.blue)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.blue, lineWidth: 3))
+                    .shadow(radius: 5)
                     .padding(.top)
                 
                 //Name
@@ -25,10 +28,10 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 
-                //City
+                //Stad
                 Text("City I grew up in: Osby, Skåne")
                     .font(.headline)
-                    .foregroundStyle(.gray)
+                    .foregroundColor(.gray)
                 
                 Divider()
                 
@@ -39,84 +42,97 @@ struct ContentView: View {
                         .fontWeight(.semibold)
                         .padding()
                     
-                    HStack {
-                        Circle()
-                            .frame(width: 6, height: 6)
+                    //School
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("School")
+                            .font(.title3)
+                            .fontWeight(.semibold)
                             .padding()
-                        Text("HighSchool: Ekbackeskolan")
-                            .padding()
-                        Spacer()
-                        Text("2017 - 2020")
-                            .foregroundStyle(.gray)
-                            .padding()
+                        
+                        HStack {
+                            Circle()
+                                .frame(width: 6, height: 6)
+                                .padding()
+                            Text("HighSchool: Ekbackeskolan")
+                                .padding()
+                            Spacer()
+                            Text("2017 - 2020")
+                                .foregroundColor(.gray)
+                                .padding()
+                        }
+                        
+                        HStack {
+                            Circle()
+                                .frame(width: 6, height: 6)
+                                .padding()
+                            Text("University: Jönköping University")
+                                .padding()
+                            Spacer()
+                            Text("2023 - Present")
+                                .foregroundColor(.gray)
+                                .padding()
+                        }
                     }
                     
-                    HStack {
-                        Circle()
-                            .frame(width: 6, height: 6)
+                    //WorkPlace
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Workplace")
+                            .font(.title3)
+                            .fontWeight(.semibold)
                             .padding()
-                        Text("University: Jönköping University")
-                            .padding()
-                        Spacer()
-                        Text("2023 - Present")
-                            .foregroundStyle(.gray)
-                            .padding()
+                        
+                        HStack {
+                            Circle()
+                                .frame(width: 6, height: 6)
+                                .padding()
+                            Text("Regnbågens Förskola, Preschool teacher")
+                                .padding()
+                            Spacer()
+                            Text("2017-2017")
+                                .foregroundColor(.gray)
+                                .padding()
+                        }
+                        
+                        HStack {
+                            Circle()
+                                .frame(width: 6, height: 6)
+                                .padding()
+                            Text("IKEA, Warehouse worker")
+                                .padding()
+                            Spacer()
+                            Text("2020-2020")
+                                .foregroundColor(.gray)
+                                .padding()
+                        }
+                        
+                        HStack {
+                            Circle()
+                                .frame(width: 6, height: 6)
+                                .padding()
+                            Text("Johpomek, Industrial work")
+                                .padding()
+                            Spacer()
+                            Text("2020-2021")
+                                .foregroundColor(.gray)
+                                .padding()
+                        }
+                        
+                        HStack {
+                            Circle()
+                                .frame(width: 6, height: 6)
+                                .padding()
+                            Text("Jem&Fix, Retail worker")
+                                .padding()
+                            Spacer()
+                            Text("2021-Present")
+                                .foregroundColor(.gray)
+                                .padding()
+                        }
                     }
                     
-                    HStack {
-                        Circle()
-                            .frame(width: 6, height: 6)
-                            .padding()
-                        Text("Workplace: Regnbågens Förskola, Förskolepedagog")
-                            .padding()
-                        Spacer()
-                        Text("2017-2017")
-                            .foregroundStyle(.gray)
-                            .padding()
-                    }
-                    
-                    HStack {
-                        Circle()
-                            .frame(width: 6, height: 6)
-                            .padding()
-                        Text("Workplace: IKEA, Lagerarbetare")
-                            .padding()
-                        Spacer()
-                        Text("2020-2020")
-                            .foregroundStyle(.gray)
-                            .padding()
-                    }
-                    
-                    HStack {
-                        Circle()
-                            .frame(width: 6, height: 6)
-                            .padding()
-                        Text("Workplace: Johpomek, Intustriarbete")
-                            .padding()
-                        Spacer()
-                        Text("2020-2021")
-                            .foregroundColor(.gray)
-                            .padding()
-                    }
-                    
-                    HStack {
-                        Circle()
-                            .frame(width: 6, height: 6)
-                            .padding()
-                        Text("Workplace: Jem&Fix, Butiksarbetare")
-                            .padding()
-                        Spacer()
-                        Text("2021-Present")
-                            .foregroundStyle(.gray)
-                            .padding()
-                    }
                 }
             }
         }
        
     }
-}
-
-#Preview {
-    ContentView()
 }
