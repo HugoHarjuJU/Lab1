@@ -31,7 +31,6 @@ struct ContentView: View {
                 //Stad
                 Text("City I grew up in: Osby, Skåne")
                     .font(.headline)
-                    .foregroundColor(.gray)
                 
                 Divider()
                 
